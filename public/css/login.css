@@ -1,0 +1,40 @@
+.signin-content {
+	padding: 20px;
+	padding-top: 50px;
+	padding-bottom: 87px;
+}
+
+.signup-image-link {
+  font-size: 14px;
+  color: #222;
+  display: block;
+  text-align: center; 
+}
+
+.signup-image-link:hover{
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.form-title {
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+
+i{
+	padding-right: 10px;
+}
+
+input:focus:not([readonly]) {
+  border: 1px solid #e74c3c;
+  box-shadow: 0 0 0 1px #e74c3c;
+}
+
+.link{
+  font-size: 14px;
+  color: #222;  
+}
+.link:hover{
+  font-weight: bold;
+  color: #e74c3c;
+}

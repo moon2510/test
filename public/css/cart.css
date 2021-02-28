@@ -1,0 +1,18 @@
+button.cart{
+	margin-top: 50px;
+	margin-bottom: 100px;
+	background-color: #e74c3c;
+	color: white;
+}
+.cart{
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+.nomargin{
+	padding-top: 50px;
+	color: #e74c3c;
+}
+.nomargin:hover{
+	color: #e74c3c;
+	font-weight: bold;
+}
