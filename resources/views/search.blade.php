@@ -5,7 +5,6 @@
 @section('custom-css')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/search.css') }}">
 @endsection
-
 @section('page-content')
 
 <div class="row accountcontainer">
