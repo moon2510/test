@@ -1,6 +1,8 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,8 +26,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('admin'), // password
             'remember_token' => Str::random(10),
             'phone' => 0000000000,
-            'firstname' => $faker->name,
-            'lastname' => $faker->name
-        ])
+            'firstname' => 'admin',
+            'lastname' => 'admin'
+        ]);
     }
 }
