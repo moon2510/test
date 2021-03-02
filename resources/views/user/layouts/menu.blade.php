@@ -64,7 +64,7 @@
             <ul>
                 <li class="{{Request::is('account/order/wait') ? 'current' : ''}}"><a href="{{ route('order_wait') }}">Wait for confirmation</a></li>
                 <li class="{{Request::is('account/order/confirmed') ? 'current' : ''}}"><a href="{{ route('order_confirm') }}">Confirmed</a></li>
-                <li class="{{Request::is('account/order/borrow') ? 'current' : ''}}"><a href="{{ route('order_borrow') }}">Borrowing Books</a></li>
+                <li class="{{Request::is('account/order/borrow') ? 'current' : ''}}"><a href="{{ route('order_borrow') }}">Borrowing books</a></li>
                 <li class="{{Request::is('account/order/history') ? 'current' : ''}}"><a href="{{ route('order_history') }}">History</a></li>
             </ul>
         </div>

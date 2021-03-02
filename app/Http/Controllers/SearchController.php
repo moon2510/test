@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\igration;
 use Illuminate\Http\Request;
 use App\Category;
-use App\Book;
+use App\book;
 use DB;
 
 class SearchController extends Controller
@@ -33,7 +33,7 @@ class SearchController extends Controller
             ]);
         }
 
-        $books = Book::withCount(['ratings as average_rating' => function($query) {$query->select(DB::raw('coalesce(avg(star_number),0)')); }])->where('name', 'like', '%' . $request->keysearch . '%');
+        $books = book::withCount(['ratings as average_rating' => function($query) {$query->select(DB::raw('coalesce(avg(star_number),0)')); }])->where('name', 'like', '%' . $request->keysearch . '%');
         if ($category_id >= 0) {
             $books = $books->where('category_id','=',$category_id);
         }
@@ -54,7 +54,7 @@ class SearchController extends Controller
 
     public function searchByName(Request $request)
     {
-        $books = Book::where('name', 'like', '%' . $request->value . '%')->get();
+        $books = book::where('name', 'like', '%' . $request->value . '%')->get();
         return response()->json($books); 
     }
 
@@ -70,7 +70,7 @@ class SearchController extends Controller
             'orderby' => $orderby,
             'paginate' => $paginate
         ]);
-            $books = Book::withCount(['ratings as average_rating' => function($query) {$query->select(DB::raw('coalesce(avg(star_number),0)')); }]);
+            $books = book::withCount(['ratings as average_rating' => function($query) {$query->select(DB::raw('coalesce(avg(star_number),0)')); }]);
             if($category_id >= 0){
                 $books = $books->where('category_id','=',$category_id);
             }

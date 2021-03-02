@@ -15,14 +15,14 @@ Cart
 		<i class="fas fa-home"></i>
 	</a></li>
 	<li class="breadcrumb-item"><a href="{{ route('account_profile') }}">Account</a></li>
-	<li class="breadcrumb-item active">Borrowing Books</li>
+	<li class="breadcrumb-item active">Borrowing books</li>
 </ol>
 <div class="row accountcontainer">
 	<div class="col-3">
 		@include('user.layouts.menu')
 	</div>
 	<div class="col-9 infocontainer">
-		<h2>Borrowing Books</h2>
+		<h2>Borrowing books</h2>
 		@if($result == 0)
 		<div class="alert alert-danger">
 			<li>No data available in here</li>
@@ -46,7 +46,7 @@ Cart
 		<table id="cart" class="table table-hover table-condensed">
 			<thead>
 				<tr>
-					<th style="width:60%">Book</th>
+					<th style="width:60%">book</th>
 					<th style="width:20%">Category</th>
 					<th style="width:20%" class="text-center">Price</th>
 				</tr>

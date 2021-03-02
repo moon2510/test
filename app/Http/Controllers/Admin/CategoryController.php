@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
 use App\Category;
-use App\Book;
+use App\book;
 
 class CategoryController extends Controller
 {
@@ -50,7 +50,7 @@ class CategoryController extends Controller
     public function destroy(request $request){
         $data = $request->only('id');
         if($category = Category::find($data['id'])){
-            $check = Book::whereHas('Order', function($query){
+            $check = book::whereHas('Order', function($query){
                 return $query->where('status', 2)->orWhere('status', 4);
             })->where('category_id', $category->id)->count();
             if($check > 0){

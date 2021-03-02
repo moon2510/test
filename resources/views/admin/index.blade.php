@@ -22,7 +22,7 @@
 				<div class="panel panel-teal panel-widget border-right">
 					<div class="row no-padding"><em class="fa fa-xl fa-book color-blue"></em>
 						<div class="large">{{$books->count()}}</div>
-						<div class="text-muted">Books</div>
+						<div class="text-muted">toys</div>
 					</div>
 				</div>
 			</div>

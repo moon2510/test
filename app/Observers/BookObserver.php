@@ -1,19 +1,19 @@
 <?php
 
 namespace App\Observers;
-use App\Book;
+use App\book;
 use App\Newsletter;
 use App\Mail\MailNewsletter;
 
-class BookObserver
+class bookObserver
 {
-    public function created(Book $Book)
+    public function created(book $book)
     {
     	$emails = Newsletter::pluck('email')->toArray();
     	$data = [
-    		'id' => $Book->id,
-    		'name' => $Book->name,
-    		'img' => $Book->img
+    		'id' => $book->id,
+    		'name' => $book->name,
+    		'img' => $book->img
     	];
         
     }

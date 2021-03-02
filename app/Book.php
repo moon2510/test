@@ -7,7 +7,7 @@ use App\Category;
 use App\Order;
 use App\OrderDetail;
 
-class Book extends Model
+class book extends Model
 {
     protected $table = "books";
 

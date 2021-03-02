@@ -115,7 +115,7 @@
 				if(data['0'].note != null){
 					show += '<p>Note: '+data['0'].note +'</p>';
 				}
-				show += '<table class="table"><thead><tr><th>Book</th><th>Category</th><th>Price</th></tr></thead><tbody>';
+				show += '<table class="table"><thead><tr><th>book</th><th>Category</th><th>Price</th></tr></thead><tbody>';
 				$.each(data['1'], function( i, l ) {
 					show += '<tr><td>'+l.name+'</td><td>'+l.category+'VND</td><td>'+l.price+'VND</td></tr>';
 				});

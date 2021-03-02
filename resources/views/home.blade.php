@@ -81,10 +81,10 @@
 				<div class="category-name">
 					@switch($key)
 					@case(0)
-					<a>Newest Books</a>
+					<a>Newest books</a>
 					@break
 					@case(1)
-					<a>Top Rating Books</a>
+					<a>Top Rating books</a>
 					@break
 					@default
 					<a href="{{ route('category', $books[0]->category->id) }}">Category : {{$books[0]->category->name}}</a>
@@ -99,9 +99,9 @@
 								<figure class="book-cover">
 									<a href="{{ route('book',$book->id) }}">
 										@if($book->img == null)
-										<img src="{{ asset('images/default.jpg') }}"  alt="Book Image" hr>
+										<img src="{{ asset('images/default.jpg') }}"  alt="book Image" hr>
 										@else
-										<img src="{{$book->img}}" alt="Book Image" hr>
+										<img src="{{$book->img}}" alt="book Image" hr>
 										@endif
 									</a>
 								</figure>
@@ -113,9 +113,9 @@
 									<div class="book-quantity">
 										<p>Remaining: {{$book->quantity}} books</p>
 									</div>
-									<!-- <div class="book-price">
+									<div class="book-price">
 										<p>{{number_format($book->price)}} VND</p>
-									</div> -->
+									</div>
 									<div class="book-buy">
 										<button class="get-book-btt" data-book-id="{{$book->id}}">Get it now</button>
 									</div>
@@ -198,7 +198,7 @@
 								<textarea readonly>&ldquo;{{$rating->comment}}&bdquo;</textarea>
 							</div>
 							<div class="col-12">
-								<p class="book_comment">Book : <a href="{{ route('book',$rating->book->id) }}">{{$rating->book->name}}</a></p>
+								<p class="book_comment">book : <a href="{{ route('book',$rating->book->id) }}">{{$rating->book->name}}</a></p>
 							</div>
 						</div>
 					</div>
@@ -222,7 +222,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-4">
+		<!-- <div class="col-4">
 			<div class="title_comment">
 				<a>Top Users In {{ date("m") }} - {{ date("Y")}}</a>
 			</div>
@@ -246,7 +246,7 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
 @endsection

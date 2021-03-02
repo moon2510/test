@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Book;
+use App\book;
 
 class Category extends Model
 {
@@ -14,7 +14,7 @@ class Category extends Model
     	'name',
     ];
 
-    public function Books(){
-    	return $this->hasMany(Book::class,'category_id','id');
+    public function books(){
+    	return $this->hasMany(book::class,'category_id','id');
     }
 }

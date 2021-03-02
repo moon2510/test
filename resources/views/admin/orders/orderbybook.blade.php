@@ -7,7 +7,7 @@
 				<em class="fa fa-home"></em>
 			</a></li>
 			<li>Order Manager</li>
-			<li class="active">List Orders By Book</li>
+			<li class="active">List Orders By book</li>
 		</ol>
 	</div><!--/.row-->
 	

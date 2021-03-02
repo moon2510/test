@@ -6,14 +6,14 @@
 			<li><a href="#">
 				<em class="fa fa-home"></em>
 			</a></li>
-			<li>Books Manager</li>
-			<li class="active">List Books</li>
+			<li>books Manager</li>
+			<li class="active">List books</li>
 		</ol>
 	</div><!--/.row-->
 	
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">List Books</h1>
+			<h1 class="page-header">List books</h1>
 		</div>
 	</div><!--/.row-->
 
@@ -21,7 +21,7 @@
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<form action="{{ route('Book.Search') }}" method="GET">
+					<form action="{{ route('book.Search') }}" method="GET">
 						<div class="input-group">
 							<input type="text" class="form-control input-md" name="key" placeholder="Search for..." />
 							<span class="input-group-btn"><button type="submit" class="btn btn-primary btn-md" >Search</button></span>
@@ -51,14 +51,14 @@
 							@foreach($books as $book)
 							<tr data-row="{{$book->id}}">
 								<td>{{$book->id}}</td>
-								<td><a href="{{route('Order.Book', $book->id)}}">{{$book->name}}</a></td>
+								<td><a href="{{route('Order.book', $book->id)}}">{{$book->name}}</a></td>
 								<td>{{$book->author}}</td>
 								<td>{{$book->published_year}}</td>
 								<td>{{$book->Category->name}}</td>
 								<td>{{$book->quantity}}</td>
 								<td>{{ number_format($book->price) }}đ</td>
 								<td>
-									<a href="{{ route('Book.Edit', $book->id) }}" class="btn btn-sm btn-primary">Chỉnh sửa</a>
+									<a href="{{ route('book.Edit', $book->id) }}" class="btn btn-sm btn-primary">Chỉnh sửa</a>
 									<a href="javascript:void(0);" class="btn btn-sm btn-danger book-remove" data-id="{{$book->id}}">Xóa</a>
 								</td>
 							</tr>

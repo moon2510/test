@@ -6,7 +6,7 @@ $(document).ready(function(){
 			url:'/cart/add_to_cart/' + book_id,
 			success:function(data){
 				if(data == 1){
-					let message = new MessageOnTop("Book was added to cart");
+					let message = new MessageOnTop("book was added to cart");
 					message.Create(message.CONFIG.SUCCESS_BOOTSTRAP_CLASS);
 					let sd = $(".cartnumber").text().replace(/[^0-9]/gi,'');
 					var num = parseInt(sd) + 1;

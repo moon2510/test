@@ -6,14 +6,14 @@
 			<li><a href="#">
 				<em class="fa fa-home"></em>
 			</a></li>
-			<li>Books Manager</li>
-			<li class="active">Add Book</li>
+			<li>books Manager</li>
+			<li class="active">Add book</li>
 		</ol>
 	</div><!--/.row-->
 	
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Book Manager</h1>
+			<h1 class="page-header">book Manager</h1>
 		</div>
 	</div><!--/.row-->
 
@@ -29,7 +29,7 @@
 							@if(session('class'))
 							<div class="alert bg-{{session('class')}}" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em>{{session('message')}}</div>
 							@endif
-							<form action="{{ route('Book.Store') }}" method="post" enctype="multipart/form-data">
+							<form action="{{ route('book.Store') }}" method="post" enctype="multipart/form-data">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="col-lg-3">
 									<div class="form-group">

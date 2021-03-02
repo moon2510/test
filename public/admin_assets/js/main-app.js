@@ -99,7 +99,7 @@ $(document).ready(function(){
 		}, function(){});
 	});
 
-	// Book Remove
+	// book Remove
 	$('.book-remove').on('click', function(){
 		var bookid = $(this).attr('data-id');
 		alertify.confirm('Xác nhận xóa', 'Nếu bạn xóa, sách sẽ mất đi trong các đơn hàng!', function(){

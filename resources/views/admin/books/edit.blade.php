@@ -6,14 +6,14 @@
             <li><a href="#">
                 <em class="fa fa-home"></em>
             </a></li>
-            <li>Books Manager</li>
-            <li class="active">Edit Book</li>
+            <li>books Manager</li>
+            <li class="active">Edit book</li>
         </ol>
     </div><!--/.row-->
     
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Book Manager</h1>
+            <h1 class="page-header">book Manager</h1>
         </div>
     </div><!--/.row-->
 
@@ -32,7 +32,7 @@
                             @if($errors->any())
                             <div class="alert bg-danger" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em>{{$errors->first()}}</div>
                             @endif
-                            <form action="{{ route('Book.Update', $book->id) }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('book.Update', $book->id) }}" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="col-lg-3">
                                     <div class="form-group">

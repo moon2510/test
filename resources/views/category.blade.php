@@ -23,12 +23,13 @@
 					</a>
 					@endforeach
 				</ul>
-			</div><hr>
+			</div>
+			<hr>
 			<div class="select_option">
 				<p class="list-group-item cat-item text-left" style="background-color: #e74c3c;color: white">Options</p>
 				<form data-category-id="{{$data[0]->category->id}}" id="options">
 					<div class="form-group">
-						<label for="">Number Books</label>
+						<label for="">Number books</label>
 						<select class="browser-default custom-select custom-select-md" style="display: inline;" id="pagination-select">
 							<option {{ ($page_selection == 10) ? 'selected' : "" }} value="10">Show 10 books</option>
 							<option {{ ($page_selection == 15) ? 'selected' : "" }} value="15">Show 15 books</option>
@@ -64,7 +65,7 @@
 					<li class="breadcrumb-item active">{{$data[0]->category->name}}</li>
 				</ol>
 			</div>
-			<hr>	
+			<hr>
 			<div id="paginate">
 				<div class="all-products-container" id="product-container">
 					@foreach ($data as $book)
@@ -78,20 +79,18 @@
 									@if(!is_null($book->ratings->avg('star_number')))
 									@php
 									$average_evalate = $book->ratings->avg('star_number');
-									$remain = 5  - $average_evalate;
+									$remain = 5 - $average_evalate;
 									@endphp
-									@for($i = 0; $i < (int)$average_evalate;$i++)
-									<i class="fas fa-star" style="color: #f1c40f;font-size: 15px"></i>
-									@endfor
-									@if(($average_evalate + (int)$remain) != 5)
-									<i class="fas fa-star-half-alt" style="color: #f1c40f;font-size: 15px"></i>
-									@endif
+									@for($i = 0; $i < (int)$average_evalate;$i++) <i class="fas fa-star" style="color: #f1c40f;font-size: 15px"></i>
+										@endfor
+										@if(($average_evalate + (int)$remain) != 5)
+										<i class="fas fa-star-half-alt" style="color: #f1c40f;font-size: 15px"></i>
+										@endif
 
-									@for($i = 0; $i < (int)$remain;$i++)
-									<i class="far fa-star" style="font-size: 15px;color: #f1c40f"></i>
-									@endfor
-									<p>Rating : {{ round($average_evalate,1) }}/5</p>
-									@endif
+										@for($i = 0; $i < (int)$remain;$i++) <i class="far fa-star" style="font-size: 15px;color: #f1c40f"></i>
+											@endfor
+											<p>Rating : {{ round($average_evalate,1) }}/5</p>
+											@endif
 								</div>
 							</div>
 							<div class="col-md-6 col-12">
@@ -101,11 +100,14 @@
 									</div>
 									<div class="book-info-panel">
 										<div class="book-quantity">
-											Remaining: {{$book->quantity}} books
+											Remaining: {{$book->quantity}} 
 										</div>
-										<div class="book-describes">
+										<div class="book-price">
+											<p>{{number_format($book->price)}} VND</p>
+										</div>
+										<!-- <div class="book-describes">
 											Describes : {{substr($book->describes,0,40)}}...
-										</div>
+										</div> -->
 										<button class="get-book-btt" data-book-id="{{$book->id}}">
 											Get it now
 										</button>

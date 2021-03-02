@@ -2935,7 +2935,7 @@
             };
 
             //if this is based on an existing dialog, create a new definition
-            //by applying the new protoype over the existing one.
+            //by applying the new probookpe over the existing one.
             if (base !== undefined) {
                 definition.factory = function () {
                     return extend(new dialogs[base].factory(), new Factory());

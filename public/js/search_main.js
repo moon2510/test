@@ -21,10 +21,10 @@ $(document).ready(function($) {
 		},
 		templates: {
 			empty: [
-			'<div class="list-group-item">No Books found ! Try another name book !.</div>'
+			'<div class="list-group-item">No books found ! Try another name book !.</div>'
 			],
 			header: [
-			'<div class="list-group search-results-dropdown">Books</div>'
+			'<div class="list-group search-results-dropdown">books</div>'
 			],
 			suggestion: function (data) {
 				return '<a href="/book/' + data.id + '" class="list-group-item">'+ data.name+'</a>';

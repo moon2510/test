@@ -4,21 +4,21 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\BookRequest;
-use App\Book;
+use App\Http\Requests\bookRequest;
+use App\book;
 use App\Category;
 use File;
 
-class BookController extends Controller
+class bookController extends Controller
 {
     public function index(){
-    	$books = Book::orderBy('id', 'DESC')->paginate(50);
+    	$books = book::orderBy('id', 'DESC')->paginate(50);
     	return view('admin.books.index', compact('books'));
     }
 
     public function apiSearch(request $request){
         $key = ($request->q !== null) ? $request->q : '';
-        $books = Book::where('name', 'like', "%$key%")->orderBy('id', 'DESC')->get();
+        $books = book::where('name', 'like', "%$key%")->orderBy('id', 'DESC')->get();
         return response()->json($books->map(function($item){
             $data = [
                 'id' => $item->id,
@@ -33,7 +33,7 @@ class BookController extends Controller
     	return view('admin.books.create', compact('categories'));
     }
 
-    public function store(BookRequest $request){
+    public function store(bookRequest $request){
         if(!Category::find($request->category)){
             return redirect()->back()->with(['class'=>'danger','message'=>'Danh mục không tồn tại.']);
         }
@@ -46,8 +46,8 @@ class BookController extends Controller
             $data['img'] = $filename;
         }
     	
-    	if($book = Book::create($data)){
-    		return redirect()->route('Book.Edit', $book->id)->with(['class'=>'success','message'=>'Thêm sách thành công.']);
+    	if($book = book::create($data)){
+    		return redirect()->route('book.Edit', $book->id)->with(['class'=>'success','message'=>'Thêm sách thành công.']);
     	}
         else{
             return redirect()->back()->with(['class'=>'danger','message'=>'Lỗi hệ thống, thử lại sau.']);
@@ -56,16 +56,16 @@ class BookController extends Controller
 
     public function edit($id){
         $categories = Category::all();
-        if($book = Book::find($id)){
+        if($book = book::find($id)){
             return view('admin.books.edit', compact(['book', 'categories']));
         }
         else{
-            return redirect()->route('Book.List');
+            return redirect()->route('book.List');
         }
     }
 
-    public function update(BookRequest $request, $id){
-        if($book = Book::find($id)){
+    public function update(bookRequest $request, $id){
+        if($book = book::find($id)){
             if(!Category::find($request->category)){
                 return redirect()->back()->with(['class'=>'danger','message'=>'Danh mục không tồn tại.']);
             }
@@ -89,7 +89,7 @@ class BookController extends Controller
 
     public function destroy(Request $request){
         $data = $request->only('id');
-        if($book = Book::find($data['id'])){
+        if($book = book::find($data['id'])){
             $check = $book->whereHas('Order', function($query){
                 return $query->where('status', 2)->orWhere('status', 4);
             })->count();
@@ -108,7 +108,7 @@ class BookController extends Controller
     }
     
     public function search(Request $request){
-        $books = Book::where('id', 'like', "%$request->key%")->orwhere('name', 'like', "%$request->key%")->orwhere('price', 'like', "%$request->key%")->orwhere('describes', 'like', "%$request->key%")->orwhere('published_year', 'like', "%$request->key%")->orwhere('author', 'like', "%$request->key%")->orwhereHas('category', function ($query) use ($request) {
+        $books = book::where('id', 'like', "%$request->key%")->orwhere('name', 'like', "%$request->key%")->orwhere('price', 'like', "%$request->key%")->orwhere('describes', 'like', "%$request->key%")->orwhere('published_year', 'like', "%$request->key%")->orwhere('author', 'like', "%$request->key%")->orwhereHas('category', function ($query) use ($request) {
             return $query->where('name', 'like', "%$request->key%");
         })->orderBy('id', 'DESC')->paginate(50);
         return view('admin.books.index', compact('books'));

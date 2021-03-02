@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Book;
+use App\book;
 use App\Order;
 use Illuminate\Support\Facades\DB;
 use Auth;

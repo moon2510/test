@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\orderRequest;
 use Illuminate\Support\Facades\DB;
 use App\Order;
-use App\Book;
+use App\book;
 use App\User;
 use App\OrderDetail;
 
@@ -33,7 +33,7 @@ class OrderController extends Controller
         try {
             $order = Order::create(['user_id' => $request->readers]);
             foreach($data as $book_id => $quantity){
-                if($book = Book::find($book_id)){
+                if($book = book::find($book_id)){
                     OrderDetail::create(['order_id' => $order->id,'book_id' => $book_id, 'quantity' => $quantity]);
                     $price = $book->price * $quantity;
                     $order->price += $price;
@@ -82,12 +82,12 @@ class OrderController extends Controller
             switch ($data['status']) {
                 case 2:
                     // ẩn đi số lượng sách được phép thuê
-                    $this->hiddenBook($order->orderdetail);
+                    $this->hiddenbook($order->orderdetail);
                     break;
                 case 3:
                     if($order->status == 2){
                         // nếu đang chờ lấy nhưng bị hủy sẽ trã số lượng sách bị ẩn lại
-                        $this->returnBook($order->orderdetail);
+                        $this->returnbook($order->orderdetail);
                     }
                     $order->note = $request->note;
                     break;
@@ -96,7 +96,7 @@ class OrderController extends Controller
                     break;
                 case 5:
                     // trã lại số sách bị ẩn
-                    $this->returnBook($order->orderdetail);
+                    $this->returnbook($order->orderdetail);
                     $order->date_give_back = now();
                     break;
             }
@@ -109,17 +109,17 @@ class OrderController extends Controller
     	return response()->json(['error' => 1, 'message' => 'Không tìm thấy đơn hàng']);
     }
 
-    public function hiddenBook($book){
+    public function hiddenbook($book){
         $book->map(function($item){
-            $book = Book::find($item->book->id);
+            $book = book::find($item->book->id);
             $book->quantity -= ($item->quantity > $book->quantity) ? $book->quantity : $item->quantity;
             return $book->save();
         });
     }
 
-    public function returnBook($book){
+    public function returnbook($book){
         $book->map(function($item){
-            $book = Book::find($item->book->id);
+            $book = book::find($item->book->id);
             $book->quantity += ($item->quantity - $item->lostbook->count() < 0) ? 0 : $item->quantity - $item->lostbook->count();
             return $book->save();
         });
@@ -145,12 +145,12 @@ class OrderController extends Controller
         return view('admin.orders.index', compact('orders', 'status', 'orders_expired'));
     }
 
-    public function OrderByBook($id){
-        if($book = Book::find($id)){
+    public function OrderBybook($id){
+        if($book = book::find($id)){
             $details = OrderDetail::where('book_id', $id)->orderBy('id', 'ASC')->paginate(50);
             return view('admin.orders.orderbybook', compact(['details', 'book']));
         }
-        return redirect()->Route('Book.List');
+        return redirect()->Route('book.List');
     }
 
     public function OrderByUser($id){
@@ -158,7 +158,7 @@ class OrderController extends Controller
             $orders = Order::where('user_id', $id)->orderBy('id', 'ASC')->paginate(50);
             return view('admin.orders.orderbyuser', compact(['orders', 'user']));
         }
-        return redirect()->Route('Book.List');
+        return redirect()->Route('book.List');
     }
 
     public function report($id){

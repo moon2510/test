@@ -38,7 +38,7 @@ Cart
 <table id="cart" class="table table-hover table-condensed">
 	<thead>
 		<tr>
-			<th style="width:50%">Book</th>
+			<th style="width:50%">book</th>
 			<th style="width:10%">Category</th>
 			<th style="width:10%" class="text-center">Quantity</th>
 			<th style="width:15%" class="text-center">Price</th>

@@ -1,19 +1,20 @@
+
 @extends('admin.layouts.master')
 @section('content')
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-	<div class="row">
+	<!-- <div class="row">
 		<ol class="breadcrumb">
 			<li><a href="#">
 				<em class="fa fa-home"></em>
 			</a></li>
-			<li>Books Manager</li>
-			<li class="active">List Lost Books</li>
+			<li>books Manager</li>
+			<li class="active">List Lost books</li>
 		</ol>
-	</div><!--/.row-->
+	</div> -->
 	
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">List Lost Books</h1>
+			<h1 class="page-header">List Lost books</h1>
 		</div>
 	</div><!--/.row-->
 

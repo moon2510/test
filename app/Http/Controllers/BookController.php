@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Book;
+use App\book;
 use App\Rating;
 use App\Order;
 use Auth;
 
-class BookController extends Controller
+class bookController extends Controller
 {
 
-	public function showBookDetailByID($id,Request $request)
+	public function showbookDetailByID($id,Request $request)
 	{
-		$data = Book::find($id);
+		$data = book::find($id);
 		if($data == null) abort(404);
 
 		$user_rating = Auth::check() ? $data->ratings()->where('user_id','=',Auth::user()->id)->first() : null;

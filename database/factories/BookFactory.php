@@ -1,10 +1,10 @@
 <?php
 
 use Faker\Generator as Faker;
-use App\Book;
+use App\book;
 use App\Category;
 
-$factory->define(Book::class, function (Faker $faker) {
+$factory->define(book::class, function (Faker $faker) {
 	$ids = Category::pluck('id');
 	return[
 		'name' => $faker->word . ' ' . $faker->numberBetween($min = 0, $max = 9999),

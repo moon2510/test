@@ -8,11 +8,11 @@ Route::get('/home',function(){
 	return redirect()->route('home');
 });
 
-Route::get('/book/{id}','BookController@showBookDetailByID')->name('book')->where('id', '[0-9]+');
+Route::get('/book/{id}','bookController@showbookDetailByID')->name('book')->where('id', '[0-9]+');
 Route::post('/book/{id}','RatingController@getRatingPaginate')->name('book')->where('id', '[0-9]+');
 
-Route::get('/category/{id}','CategoryController@listBooksById')->name('category')->where('id', '[0-9]+');
-Route::post('/category/{id}','CategoryController@listBookPaginate')->name('post_category');
+Route::get('/category/{id}','CategoryController@listbooksById')->name('category')->where('id', '[0-9]+');
+Route::post('/category/{id}','CategoryController@listbookPaginate')->name('post_category');
 
 Route::post('/newsletter','NewsletterController@subscribe')->name('newsletter_subscribe');
 Route::get('/contact_us','ContactUsController@index')->name('contact_us');
@@ -85,14 +85,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
 	});
 
 	Route::group(['prefix' => 'books'], function(){
-		Route::get('/list', 'Admin\BookController@index')->name('Book.List');
-		Route::get('/create', 'Admin\BookController@create')->name('Book.Create');
-		Route::post('/create', 'Admin\BookController@store')->name('Book.Store');
-		Route::get('/{id}/edit', 'Admin\BookController@edit')->name('Book.Edit');
-		Route::post('/{id}/edit', 'Admin\BookController@update')->name('Book.Update');
-		Route::get('/search', 'Admin\BookController@search')->name('Book.Search');
-		Route::get('/api/search', 'Admin\BookController@apiSearch');
-		Route::delete('/deleted', 'Admin\BookController@destroy');
+		Route::get('/list', 'Admin\bookController@index')->name('book.List');
+		Route::get('/create', 'Admin\bookController@create')->name('book.Create');
+		Route::post('/create', 'Admin\bookController@store')->name('book.Store');
+		Route::get('/{id}/edit', 'Admin\bookController@edit')->name('book.Edit');
+		Route::post('/{id}/edit', 'Admin\bookController@update')->name('book.Update');
+		Route::get('/search', 'Admin\bookController@search')->name('book.Search');
+		Route::get('/api/search', 'Admin\bookController@apiSearch');
+		Route::delete('/deleted', 'Admin\bookController@destroy');
 	});
 
 	Route::group(['prefix' => 'order'], function(){
@@ -103,7 +103,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
 		Route::get('/{status}/search', 'Admin\OrderController@search')->name('Order.Search');
 		Route::put('/updated', 'Admin\OrderController@update');
 		Route::delete('/deleted', 'Admin\OrderController@destroy');
-		Route::get('/book/{id}', 'Admin\OrderController@OrderByBook')->name('Order.Book');
+		Route::get('/book/{id}', 'Admin\OrderController@OrderBybook')->name('Order.book');
 		Route::get('/user/{id}', 'Admin\OrderController@OrderByUser')->name('Order.User');
 		Route::get('/report/{id}', 'Admin\OrderController@report')->name('Order.Report');
 	});
@@ -115,9 +115,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
 	});
 
 	Route::group(['prefix' => 'lost-books'], function(){
-		Route::post('/add', 'Admin\LostBookController@store');
-		Route::get('/list', 'Admin\LostBookController@index')->name('LostBook.List');
-		Route::delete('/deleted', 'Admin\LostBookController@destroy');
+		Route::post('/add', 'Admin\LostbookController@store');
+		Route::get('/list', 'Admin\LostbookController@index')->name('Lostbook.List');
+		Route::delete('/deleted', 'Admin\LostbookController@destroy');
 	});
 
 	Route::group(['prefix' => 'contacts'], function(){

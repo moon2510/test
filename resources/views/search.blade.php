@@ -33,7 +33,7 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="">Count Books</label>
+					<label for="">Count books</label>
 					<select class="form-control" id="paginate-select">
 						<option {{ ($paginate == 10) ? 'selected' : "" }} value="10">Show 10 books</option>
 						<option {{ ($paginate == 15) ? 'selected' : "" }} value="15">Show 15 books</option>

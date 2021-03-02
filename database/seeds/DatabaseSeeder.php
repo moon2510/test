@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         //$this->call(UserSeeder::class);
         //$this->call(CategorySeeder::class);
-        //$this->call(BookSeeder::class);
+        //$this->call(bookSeeder::class);
         //$this->call(ConfigSeeder::class);
         User::create([
             'email' => 'admin@gmail.com',
