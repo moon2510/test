@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
 use App\Category;
-use App\book;
+use App\Book;
 
 class CategoryController extends Controller
 {

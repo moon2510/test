@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\orderRequest;
 use Illuminate\Support\Facades\DB;
 use App\Order;
-use App\book;
+use App\Book;
 use App\User;
 use App\OrderDetail;
 

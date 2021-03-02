@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Order;
-use App\book;
+use App\Book;
 use App\Lostbook;
 
 class OrderDetail extends Model

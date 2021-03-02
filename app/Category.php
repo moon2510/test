@@ -3,14 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\book;
+use App\Book;
 
 class Category extends Model
 {
     //
     protected $table = "categories";
 
-    protected $fillable = [
+    protected $fillable
+    \ = [
     	'name',
     ];
 

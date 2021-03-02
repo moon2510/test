@@ -1,7 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
-use App\book;
+use App\Book;
 use App\Category;
 
 $factory->define(book::class, function (Faker $faker) {

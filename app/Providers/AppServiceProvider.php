@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\book;
+use App\Book;
 use App\OrderDetail;
 use App\Observers\bookObserver;
 use App\Observers\OrderDetailObserver;

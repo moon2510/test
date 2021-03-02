@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
-use App\book;
+use App\Book;
 use App\Rating;
 use App\User;
 use App\ImageSlider;

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
-use App\book;
+use App\Book;
 
 class OrderController extends Controller
 {

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\igration;
 use Illuminate\Http\Request;
 use App\Category;
-use App\book;
+use App\Book;
 use DB;
 
 class SearchController extends Controller

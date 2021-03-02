@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Observers;
-use App\book;
+use App\Book;
 use App\Newsletter;
 use App\Mail\MailNewsletter;
 
