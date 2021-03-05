@@ -47,7 +47,7 @@ class BookController extends Controller
         }
     	
     	if($book = Book::create($data)){
-    		return redirect()->route('Book.Edit', $book->id)->with(['class'=>'success','message'=>'Thêm sách thành công.']);
+    		return redirect()->route('Book.Edit', $book->id)->with(['class'=>'success','message'=>'Thêm đồ chơi thành công.']);
     	}
         else{
             return redirect()->back()->with(['class'=>'danger','message'=>'Lỗi hệ thống, thử lại sau.']);
@@ -98,13 +98,13 @@ class BookController extends Controller
                     if(File::exists(public_path().$book->img)) {
                         File::delete(public_path().$book->img);
                     }
-                    return response()->json(['error' => 0, 'message' => 'Xóa sách thành công']);
+                    return response()->json(['error' => 0, 'message' => 'Xóa đồ chơi thành công']);
                 }
             }else{
                 return response()->json(['error' => 1, 'message' => 'Sách đang có đơn hàng chưa được trã']);
             }
         }
-        return response()->json(['error' => 1, 'message' => 'Không tìm thấy sách']);
+        return response()->json(['error' => 1, 'message' => 'Không tìm thấy đồ chơi']);
     }
     
     public function search(Request $request){

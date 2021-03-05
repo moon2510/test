@@ -33,12 +33,12 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="">Count Books</label>
+					<label for="">Count Toys</label>
 					<select class="form-control" id="paginate-select">
-						<option {{ ($paginate == 10) ? 'selected' : "" }} value="10">Show 10 books</option>
-						<option {{ ($paginate == 15) ? 'selected' : "" }} value="15">Show 15 books</option>
-						<option {{ ($paginate == 20) ? 'selected' : "" }} value="20">Show 20 books</option>
-						<option {{ ($paginate == 25) ? 'selected' : "" }} value="25">Show 25 books</option>
+						<option {{ ($paginate == 10) ? 'selected' : "" }} value="10">Show 10 toys</option>
+						<option {{ ($paginate == 15) ? 'selected' : "" }} value="15">Show 15 toys</option>
+						<option {{ ($paginate == 20) ? 'selected' : "" }} value="20">Show 20 toys</option>
+						<option {{ ($paginate == 25) ? 'selected' : "" }} value="25">Show 25 toys</option>
 					</select>
 				</div>
 				<button type="submit" class="btn btn-primary">search</button>
@@ -96,11 +96,11 @@
 								</div>
 								<div class="book-info-panel">
 									<div class="book-quantity">
-										Remaining: {{$book->quantity}} books
+										Remaining: {{$book->quantity}} 
 									</div>
-									<div class="book-describes">
+									<!-- <div class="book-describes">
 										Describes : {{substr($book->describes,0,40)}}...
-									</div>
+									</div> -->
 									<button class="get-book-btt" data-book-id="{{$book->id}}">
 										Get it now
 									</button>
@@ -117,7 +117,7 @@
 			</div>
 			@else
 			<div class="alert alert-warning alert-dismissible fade show">
-				<li>Nothing to show, please input key to search more books !</li>
+				<li>Nothing to show, please input key to search more toys !</li>
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>

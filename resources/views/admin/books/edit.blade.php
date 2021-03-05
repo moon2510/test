@@ -37,7 +37,7 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="input-file">Hình Ảnh</label>
-                                        <input type="file" id="input-file" name="img" class="dropify" data-height="364px" data-default-file="{{ ($book->img == null) ? asset('images/default.jpg') : asset($book->img) }}" accept="images/*"/>
+                                        <input type="file" id="input-file" name="img" class="dropify" data-height="364px" data-default-file="{{ ($book->img == null) ? asset('images/default.jpg') : asset($book->img) }}"/>
                                     </div>
                                 </div>
                                 <div class="col-lg-9">
@@ -81,7 +81,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
-                                        <label>Giá cho thuê <font color="red">*</font></label>
+                                        <label>Giá <font color="red">*</font></label>
                                         <input class="form-control" type="number" name="price" min="0" value="{{$book->price}}">
                                         @if ($errors->has('price'))
                                         <span class="text-danger">{{ $errors->first('price') }}</span>

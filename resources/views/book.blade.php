@@ -77,7 +77,7 @@
 							</div>
 
 							<div class="col-6 text-center" id="quantity-field">
-								Remaining: {{$book->quantity}} books
+								Remaining: {{$book->quantity}} 
 							</div>
 						</div>
 					</div>
