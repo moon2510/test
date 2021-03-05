@@ -28,12 +28,12 @@
 				<p class="list-group-item cat-item text-left" style="background-color: #e74c3c;color: white">Options</p>
 				<form data-category-id="{{$data[0]->category->id}}" id="options">
 					<div class="form-group">
-						<label for="">Number Books</label>
+						<label for="">Number Toys</label>
 						<select class="browser-default custom-select custom-select-md" style="display: inline;" id="pagination-select">
-							<option {{ ($page_selection == 10) ? 'selected' : "" }} value="10">Show 10 books</option>
-							<option {{ ($page_selection == 15) ? 'selected' : "" }} value="15">Show 15 books</option>
-							<option {{ ($page_selection == 20) ? 'selected' : "" }} value="20">Show 20 books</option>
-							<option {{ ($page_selection == 25) ? 'selected' : "" }} value="25">Show 25 books</option>
+							<option {{ ($page_selection == 10) ? 'selected' : "" }} value="10">Show 10 toys</option>
+							<option {{ ($page_selection == 15) ? 'selected' : "" }} value="15">Show 15 toys</option>
+							<option {{ ($page_selection == 20) ? 'selected' : "" }} value="20">Show 20 toys</option>
+							<option {{ ($page_selection == 25) ? 'selected' : "" }} value="25">Show 25 toyks</option>
 						</select>
 					</div>
 					<div class="form-group">
@@ -101,7 +101,7 @@
 									</div>
 									<div class="book-info-panel">
 										<div class="book-quantity">
-											Remaining: {{$book->quantity}} books
+											Remaining: {{$book->quantity}} 
 										</div>
 										<div class="book-describes">
 											Describes : {{substr($book->describes,0,40)}}...

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Online Library - Administrator</title>
+	<title>ATN Shop- Administrator</title>
 	<link href="{{ asset('admin_assets/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('admin_assets/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('admin_assets/css/datepicker3.css') }}" rel="stylesheet">
@@ -57,14 +57,14 @@
 			</li>
 			<li><a href="{{ route('Category.List') }}"><em class="fa fa-folder-open">&nbsp;</em> Category</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#books-item">
-				<em class="fa fa-book">&nbsp;</em> Books <span data-toggle="collapse" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				<em class="fa fa-book">&nbsp;</em> Toys <span data-toggle="collapse" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="books-item">
 					<li><a class="" href="{{ route('Book.Create') }}">
-						<span class="fa fa-arrow-right">&nbsp;</span> Add New Book
+						<span class="fa fa-arrow-right">&nbsp;</span> Add New Toy
 					</a></li>
 					<li><a class="" href="{{ route('Book.List') }}">
-						<span class="fa fa-arrow-right">&nbsp;</span> List Books
+						<span class="fa fa-arrow-right">&nbsp;</span> List Toy
 					</a></li>
 				</ul>
 			</li>
@@ -72,9 +72,9 @@
 				<em class="fa fa-user">&nbsp;</em> User <span data-toggle="collapse" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="user-item">
-					<li><a class="" href="{{ route('User.Create') }}">
+					<!-- <li><a class="" href="{{ route('User.Create') }}">
 						<span class="fa fa-arrow-right">&nbsp;</span> Add New User
-					</a></li>
+					</a></li> -->
 					<li><a class="" href="{{ route('User.List') }}">
 						<span class="fa fa-arrow-right">&nbsp;</span> List Users
 					</a></li>
@@ -83,7 +83,7 @@
 			<li class="parent "><a data-toggle="collapse" href="#order-item">
 				<em class="fa fa-clipboard">&nbsp;</em> Order <span data-toggle="collapse" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
-				<ul class="children collapse" id="order-item">
+				<!-- <ul class="children collapse" id="order-item">
 					<li><a class="" href="{{ route('Order.List', 1) }}">
 						<span class="fa fa-arrow-right">&nbsp;</span> Order Wait
 					</a></li>
@@ -102,13 +102,13 @@
 					<li><a class="" href="{{ route('Order.Create') }}">
 						<span class="fa fa-arrow-right">&nbsp;</span> Add New Order
 					</a></li>
-				</ul>
+				</ul> -->
 			</li>
-			<li><a href="{{ route('LostBook.List') }}"><em class="fa fa-book">&nbsp;</em> Lost Books</a></li>
+			<!-- <li><a href="{{ route('LostBook.List') }}"><em class="fa fa-book">&nbsp;</em> Lost Books</a></li>
 			<li><a href="{{ route('Comment.List') }}"><em class="fa fa-comment">&nbsp;</em> Comments</a></li>
 			<li><a href="{{ route('Transaction.List') }}"><em class="fa fa-dollar">&nbsp;</em> Transaction</a></li>
 			<li><a href="{{ route('Contact.List') }}"><em class="fa fa-envelope-square">&nbsp;</em> Contact us</a></li>
-			<li><a href="{{route('logout')}}"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			<li><a href="{{route('logout')}}"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li> -->
 		</ul>
 	</div><!--/.sidebar-->
 		

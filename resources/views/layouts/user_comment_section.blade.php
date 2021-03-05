@@ -1,4 +1,4 @@
-@if($count_ratings > 0)
+<!-- @if($count_ratings > 0)
 @foreach($data as $rating)
 <div class="other-user-comment">
 	<div class="row">
@@ -55,4 +55,4 @@
 <div class="alert alert-warning">
 	<li>No Comment!</li>
 </div>
-@endif
+@endif -->

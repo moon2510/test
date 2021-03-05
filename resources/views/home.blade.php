@@ -81,10 +81,10 @@
 				<div class="category-name">
 					@switch($key)
 					@case(0)
-					<a>Newest Books</a>
+					<a>Newest Toys</a>
 					@break
 					@case(1)
-					<a>Top Rating Books</a>
+					<a>Top Rating Toys</a>
 					@break
 					@default
 					<a href="{{ route('category', $books[0]->category->id) }}">Category : {{$books[0]->category->name}}</a>
@@ -111,7 +111,7 @@
 										<a href="{{ route('book',$book->id) }}">{{$book->name}}</a>
 									</div>
 									<div class="book-quantity">
-										<p>Remaining: {{$book->quantity}} books</p>
+										<p>Remaining: {{$book->quantity}}</p>
 									</div>
 									<!-- <div class="book-price">
 										<p>{{number_format($book->price)}} VND</p>
@@ -150,7 +150,7 @@
 	</div>
 </div>
 
-<div class="top-user-container">
+<!-- <div class="top-user-container">
 	<div class="row d-flex justify-content-center">
 		<div class="col-8">
 			<div class="title_comment">
@@ -248,7 +248,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 @endsection
 
 @section('custom-js')

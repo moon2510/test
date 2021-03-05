@@ -34,7 +34,7 @@
 					</div>
 					<div class="book-info-panel">
 						<div class="book-quantity">
-							Remaining: {{$book->quantity}} books
+							Remaining: {{$book->quantity}} 
 						</div>
 						<div class="book-describes">
 							Describes : {{substr($book->describes,0,40)}}...

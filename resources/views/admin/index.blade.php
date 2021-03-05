@@ -22,26 +22,26 @@
 				<div class="panel panel-teal panel-widget border-right">
 					<div class="row no-padding"><em class="fa fa-xl fa-book color-blue"></em>
 						<div class="large">{{$books->count()}}</div>
-						<div class="text-muted">Books</div>
+						<div class="text-muted">Toys</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
+			<!-- <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 				<div class="panel panel-blue panel-widget border-right">
 					<div class="row no-padding"><em class="fa fa-xl fa-comments color-blue"></em>
 						<div class="large">{{$comments->count()}}</div>
 						<div class="text-muted">Comments</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
+			</div> -->
+			<!-- <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 				<div class="panel panel-orange panel-widget border-right">
 					<div class="row no-padding"><em class="fa fa-xl fa-users color-blue"></em>
 						<div class="large">{{$users->count()}}</div>
 						<div class="text-muted">Users</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 				<div class="panel panel-red panel-widget ">
 					<div class="row no-padding"><em class="fa fa-xl fa-clipboard color-blue"></em>
@@ -52,7 +52,7 @@
 			</div>
 		</div><!--/.row-->
 	</div>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-xs-6 col-md-3">
 			<div class="panel panel-default">
 				<div class="panel-body easypiechart-panel">
@@ -84,8 +84,8 @@
 					<div class="easypiechart" id="easypiechart-red" data-percent="{!!percent($orders->count(), $orders->where('status', 3)->count())!!}" ><span class="percent">{!!$orders->where('status', 3)->count()!!}/{!!$orders->count()!!}</span></div>
 				</div>
 			</div>
-		</div>
-	</div><!--/.row-->
+		</div> 
+	</div>-->
 	<div class="row">
 
 
